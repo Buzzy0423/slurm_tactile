@@ -1,0 +1,5 @@
+Task,Train_Acc,Test_Acc,Precision,Recall,F1_score
+Material,0.3333,0.3333,0.1111,0.3333,0.1667
+Motion,0.3333,0.3333,0.1111,0.3333,0.1667
+Material-Motion,0.1056,0.0667,0.0133,0.0667,0.0222
+Binary,0.6667,0.6667,0.3333,0.5,0.4
