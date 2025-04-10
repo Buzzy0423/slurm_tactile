@@ -20,7 +20,7 @@ os.makedirs("models", exist_ok=True)
 # Setup Logging
 # ---------------------------
 logging.basicConfig(
-    filename='log/training_log_material.log',
+    filename='log/training_log_material_active.log',
     level=logging.INFO,
     format='%(asctime)s %(levelname)s: %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
@@ -30,7 +30,7 @@ logger = logging.getLogger()
 # ---------------------------
 # 1. Reading and Preprocessing the Data
 # ---------------------------
-df = pd.read_csv("./data/material_classification_data.csv")
+df = pd.read_csv("./data/material_classification_active.csv")
 # Convert the 'reading' column from string to a list of floats.
 df["reading"] = df["reading"].apply(ast.literal_eval)
 
@@ -141,7 +141,7 @@ logger.info("Test dataset size: %d samples", len(X_test))
 history = model.fit(X_train, y_train_encoded, epochs=epochs, batch_size=batch_size, validation_split=0.1)
 
 # Save the trained model.
-model_path = "models/material_classifier.keras"
+model_path = "models/material_classifier_active.keras"
 model.save(model_path)
 logger.info("Model saved to %s", model_path)
 
@@ -156,7 +156,7 @@ plt.xlabel("Epoch")
 plt.ylabel("Loss")
 plt.legend()
 plt.grid(True)
-loss_plot_path = "imgs/loss_curve_material.png"
+loss_plot_path = "imgs/loss_curve_material_active.png"
 plt.savefig(loss_plot_path, dpi=300)  # Save the figure with high resolution
 plt.close()
 logger.info("Loss plot saved to %s", loss_plot_path)

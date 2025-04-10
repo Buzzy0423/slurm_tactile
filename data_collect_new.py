@@ -120,7 +120,7 @@ def main():
                     })
                 print(f"Completed trial {trial} for {label_name} on {material}.")
     
-    output_filename = "./data/material_classification_data.csv"
+    output_filename = "./data/material_classification_active.csv"
     save_data_to_csv(output_filename, collected_data)
     print("Experiment complete. Dataset ready for analysis.")
 
