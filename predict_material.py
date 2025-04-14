@@ -72,6 +72,6 @@ def real_time_prediction(port, model_path):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Real-time Material Prediction Using Trained LSTM Model")
     parser.add_argument("-p", "--port", type=str, default="/dev/cu.usbmodem2101", help="Port to which the sensor is connected")
-    parser.add_argument("-m", "--model", type=str, default="models/material_classifier.keras", help="Path to the trained model file")
+    parser.add_argument("-m", "--model", type=str, default="models/material_classifier_active.keras", help="Path to the trained model file")
     args = parser.parse_args()
     real_time_prediction(args.port, args.model)
